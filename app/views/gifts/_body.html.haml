@@ -1,0 +1,70 @@
+.body
+  .body__container1
+    .body__container1__center
+      .body__container1__center__upper
+      .body__container1__center__profile
+        .body__container1__center__profile__comment
+          %p 人の想いをインターネットを
+          %p 通じ表現する、想いを届ける
+          %p お手伝いが出来ればと
+          %p 考えています
+          %a
+        .body__container1__center__profile__image
+          -# = image_tag "profile.1.jpg", height: '400px', width: '400px'
+  .body__container2#profile
+    .body__container2__theme
+      Profile
+    .body__container2__box
+      .body__container2__box__1
+        %c 都内のアパレル店員を経て30才目前にして
+        %br オーストラリアへ
+        %a 帰国後に地元和歌山で
+        %p 建材メーカーの営業として勤務する
+        %c 地元の懐かしい空気に癒されるも
+        %br 仕事では人生で一番の挫折を味わい一念発起
+        %a 都内のプログラミングスクールに通い、
+        %p 人の想いを繋げるWEBクリエーターを目指す
+  .body__container3#skill
+    .body__container3__theme
+      Skill
+    .body__container3__box
+      .body__container3__box__1
+        %h2 Design
+        -# = image_tag "photoshop-cc.svg", size: '50x50'
+        -# = image_tag "lightroom-cc.svg", size: '50x50'
+        -# = image_tag "adobe-illustrator-cc.svg", size: '50x50'
+      .body__container3__box__2
+        %h2 Frontend
+        %i.fab.fa-html5
+        %i.fab.fa-css3-alt
+        %i.fab.fa-js
+      .body__container3__box__3
+        %h2 Backend
+        %i.fas.fa-gem
+        %h2 Server
+        %i.fab.fa-aws
+  .body__container4#works
+    .body__container4__theme
+      Works
+    .body__container4__box
+      .body__container4__box__1
+        -# = link_to "" do
+          -# = image_tag "support-space.png", class: 'works'
+          %i.fas.fa-wrench
+            メンテナンス中
+      .body__container4__box__2
+        -# = link_to 'http://18.176.21.46' do
+          -# = image_tag "chat-space.png", class: 'works'
+      .body__container4__box__3
+        -# = link_to 'http://52.192.4.46/' do
+        -#   = image_tag "Fmarket.png", class: 'works'
+  .body__container5#contact
+    .body__container5__theme
+      Contact
+    .body__container5__box
+      .body__container5__box__1
+        %c ご依頼は下記お問い合わせまで
+        %br よろしくお願いいたします！
+      .body__container5__box__2
+        -# = link_to top_contact_path do
+        %i.fas.fa-envelope
