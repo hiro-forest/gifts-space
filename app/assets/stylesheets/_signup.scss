@@ -1,0 +1,94 @@
+.registration {
+  width: 100vw;
+  height: 100%;
+  background-color: #fff;
+  @media (max-width:650px){
+    height: 100vh;
+  }
+  &__upper {
+    max-width: 980px;
+    height: 15vh;
+    margin: 0 auto;
+    @media (max-width: 650px){
+      display: none;
+    }
+
+  }
+  &__main {
+    padding:20px;
+    max-width: 650px;
+    height: calc(100% - 30vh);
+    margin: 0 auto;
+    background-color: #ccc;
+    border-radius: 25px;
+    @media (max-width: 650px){
+      height: 100%;
+      border-radius: 3px;
+    }
+    &__container {
+      color: #fff;
+      height: 100%;
+      margin: 0 auto;
+      text-align: center;
+      &__thema {
+        position: relative;
+        i {
+          font-size: 30px;
+        }
+        a {
+          position: absolute;
+          right: 10px;
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+      &__form {
+        .field {
+          font-size: 20px;
+          padding: 20px;
+          input {
+            width: 75%;
+            @media (max-width: 650px){
+              width: 100%;
+            }
+          }
+          select {
+            height: 33px;
+            width: 75%;
+            border: ridge 2px #fff;
+            @media (max-width: 650px){
+              width: 100%;
+            }
+          }
+          p {
+            color: red;
+          }
+          &__box {
+            background-color: #fff;
+            height: 35px;
+            width: 75%;
+            margin: 0 auto;
+            @media (max-width: 650px){
+              width: 100%;
+            }
+            a {
+              text-decoration: none;
+              color: #000000;
+            }
+          }
+        }
+        .actions {
+          font-size: 20px;
+          padding: 20px;
+          input {
+            background-color: transparent;
+            height: 33px;
+            width: 75%;
+            border: ridge 2px #fff;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

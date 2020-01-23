@@ -1,9 +1,13 @@
 .header
   .header__main
     .header__main__name
-      Hiroki Morimoto
+      %i.fas.fa-hands
+      あしなが支援サイト
+      = link_to root_path do
+        %i.fas.fa-undo-alt
     .header__main__box
-      -# = link_to "Profile", "#profile", class: 'menu'
-      -# = link_to "Skill", "#skill", class: 'menu'
-      -# = link_to "Works", "#works", class: 'menu'
-      -# = link_to "Contact", "#contact", class: 'menu'
+      - if user_signed_in?
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "menu"
+      - else
+        = link_to "新規登録", new_signup_path, class: "menu"
+        = link_to "ログイン", new_user_session_path, class: "menu"

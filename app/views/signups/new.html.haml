@@ -1,0 +1,23 @@
+.registration
+  .registration__upper
+  .registration__main
+    .registration__main__container
+      .registration__main__container__thema
+        %i.fas.fa-hands
+      .registration__main__container__form
+        .field
+        .field
+          .field__box
+            = link_to user_signups_path, id: "select" do
+              %i.far.fa-envelope
+              = "メールアドレスで登録する"
+        .field
+          .field__box
+            = link_to "" do
+              %i.fab.fa-facebook-f
+              = "Facebookで登録"
+        .field
+          .field__box
+            = link_to "" do
+              %i.fab.fa-google
+              = "Googleで登録する"
