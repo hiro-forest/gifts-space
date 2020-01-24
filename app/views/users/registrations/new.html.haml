@@ -1,0 +1,31 @@
+.registration
+  .registration__upper
+  .registration__main
+    .registration__main__container
+      .registration__main__container__thema
+        %i.fas.fa-hands
+        = render "users/shared/links"
+      .registration__main__container__form
+        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          .field
+            = f.label :nickname
+            %br/
+            = f.text_field :nickname, autofocus: true
+          = render "devise/shared/error_messages", resource: resource
+          .field
+            = f.label :email
+            %br/
+            = f.email_field :email, autofocus: true, autocomplete: "email"
+          .field
+            = f.label :password
+            - if @minimum_password_length
+              %em
+                (#{@minimum_password_length} characters minimum)
+            %br/
+            = f.password_field :password, autocomplete: "new-password"
+          .field
+            = f.label :password_confirmation
+            %br/
+            = f.password_field :password_confirmation, autocomplete: "new-password"
+          .actions
+            = f.submit "次へ進む"

@@ -1,0 +1,37 @@
+.registration
+  .registration__upper
+  .registration__main
+    .registration__main__container
+      .registration__main__container__thema
+        %i.fas.fa-hands
+      .registration__main__container__form
+        = form_for @user, url: address_signups_path, method: :post, class: "", id: "" do |f|
+          .field
+            = f.label :nickname
+            %br/
+            = f.text_field :nickname, autofocus: true
+            - if session[:error_nickname]
+              %p ニックネームが無効です
+          .field
+            = f.label :email
+            %br/
+            = f.email_field :email, autofocus: true, autocomplete: "email"
+            - if session[:error_email]
+              %p メールアドレスが無効です
+          .field
+            = f.label :password
+            - if @minimum_password_length
+              %em
+                (#{@minimum_password_length} characters minimum)
+            %br/
+            = f.password_field :password, autocomplete: "new-password"
+            - if session[:error_password]
+              %p パスワードが無効です
+          -# .field
+            = f.label :password_confirmation
+            %br/
+            = f.password_field :password_confirmation, autocomplete: "new-password"
+            - if session[:error_password_confirmation]
+              %p パスワードが一致しません
+          .actions
+            = f.submit "次へ進む"

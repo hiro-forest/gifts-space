@@ -1,0 +1,39 @@
+.registration
+  .registration__upper
+  .registration__main
+    .registration__main__container
+      .registration__main__container__thema
+        %i.fas.fa-hands
+      .registration__main__container__form
+        = form_for @address, url: signups_path, method: :post, class: "", id: "" do |f|
+          .field
+            = f.label :postal_code, "郵便番号"
+            %br/
+            = f.text_field :postal_code, autofocus: true
+            - if session[:error_postal_code]
+              %p 郵便番号が無効です
+          .field
+            = f.label :prefecture, "地域"
+            %br/
+            = f.collection_select :prefecture, Todouhuken.all, :id, :name, prompt: "---", class: "prefecture"
+            -# = f. text_field :prefecture, autofocus: true
+            - if session[:error_prefecture]
+              %p 地域が無効です
+          .field
+            = f.label :city, "市町村"
+            %br/
+            = f.text_field :city, autofocus: true
+            - if session[:error_city]
+              %p 市町村が無効です
+          .field
+            = f.label :street, "番地"
+            %br/
+            = f.text_field :street
+            - if session[:error_street]
+              %p 番地が無効です
+          .field
+            = f.label :building, "建物名"
+            %br/
+            = f.text_field :building
+          .actions
+            = f.submit "登録する"

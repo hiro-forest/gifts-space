@@ -1,0 +1,55 @@
+.wrapper
+  = render "gifts/header"
+  .session.body
+    .devise-login-container
+      %header.devise-login-container__header
+        %h1
+          = link_to root_path, data: {"turbolinks": false} do
+            %i.fas.fa-gem
+      %main.devise-login-container__main
+        .devise-login-container__main__container
+          .devise-login-container__main__container__new
+            - flash[:notice]
+            %p アカウントお持ちでない方はこちら
+            = link_to root_path, class: "container__new" do
+              = "新規会員登録"
+          .devise-login-container__main__container__sns
+            .devise-login-container__main__container__sns__facebook
+              = link_to root_path, method: :post do
+                %i.fab.fa-facebook-f
+                = "Facebookでログイン"
+            .devise-login-container__main__container__sns__google
+              = link_to root_path, method: :post do
+                %i.fab.fa-google
+                = "Googleでログイン"
+          = form_for(resource, as: resource_name, url: session_path(resource_name), class:"devise-login-container__main__container__form") do |f|
+            .devise-login-container__main__container__form__content
+              .devise-login-container__main__container__form__content__group
+                %div
+                  = f.email_field :email, placeholder: "メールアドレス", class: "input-default"
+              .devise-login-container__main__container__form__content__group
+                %div
+                  = f.password_field :password, placeholder: "パスワード", class: "input-default"
+              .devise-login-container__main__container__form__content__submit
+                = f.submit "ログイン", class:"btn-default btn-red"
+              .devise-login-container__main__container__form__content__group
+                = link_to "パスワードをお忘れの方", "#"
+  =render "gifts/footer"
+
+  -# %h2 Log in
+  -# = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  -#   .field
+  -#     = f.label :email
+  -#     %br/
+  -#     = f.email_field :email, autofocus: true, autocomplete: "email"
+  -#   .field
+  -#     = f.label :password
+  -#     %br/
+  -#     = f.password_field :password, autocomplete: "current-password"
+  -#   - if devise_mapping.rememberable?
+  -#     .field
+  -#       = f.check_box :remember_me
+  -#       = f.label :remember_me
+  -#   .actions
+  -#     = f.submit "Log in"
+  -# = render "users/shared/links"
