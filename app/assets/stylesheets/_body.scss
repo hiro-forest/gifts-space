@@ -54,10 +54,38 @@
     height: 100%;
   }
   &__container1 {
+    position: relative;
     width: 100%;
     height: 50vh;
+    animation: bg-color 10s alternate infinite;
+    -webkit-animation: bg-color 10s alternate infinite;
+    @-webkit-keyframes bg-color {
+      0% { background-color: #fff; }
+      20% { background-color: #f1c40f; }
+      40% { background-color: #1abc9c; }
+      60% { background-color: #3498db; }
+      80% { background-color: #9b59b6; }
+      100% { background-color: #e74c3c; }
+    }
+    @keyframes bg-color {
+      0% { background-color: #fff; }
+      20% { background-color: #eee; }
+      40% { background-color: #ccc; }
+      60% { background-color: #aaaaaa; }
+      80% { background-color: #777777; }
+      100% { background-color: #555555; }
+    }
     @media (max-width: 800px){
       height: 80vh;
+    }
+    .circle {
+      background-color: #000000;
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+      position: absolute;
+      bottom: 0;
+      left: 20px;
     }
     &__center {
       margin: 0 auto;
@@ -118,6 +146,16 @@
             box-shadow:3px 3px 3px 3px rgba(0, 0, 0, 0.1);
             border-radius: 200px;
             background-color: #000000;
+            animation: puyon 1.0s linear 0s 1;
+            @keyframes puyon {
+              0%   { transform: scale(1.0, 1.0) translate(0%, 0%); }
+              40%  { transform: scale(0.95, 1.2) translate(0%, -10%); }
+              50%  { transform: scale(1.1, 0.9) translate(0%, 5%); }
+              60%  { transform: scale(0.95, 1.05) translate(0%, -3%); }
+              70%  { transform: scale(1.05, 0.95) translate(0%, 3%); }
+              80%  { transform: scale(1.0, 1.0) translate(0%, 0%); }
+              100% { transform: scale(1.0, 1.0) translate(0%, 0%); }
+            }
             @media (max-width: 750px){
               width: 300px;
               height: 300px;
