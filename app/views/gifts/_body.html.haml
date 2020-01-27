@@ -37,37 +37,18 @@
   -#       %i.fab.fa-aws
   .body__container4
     .body__container4__theme
-      Works
+      Hopes
     .body__container4__box
       .body__container4__box__1
-        = link_to "" do
-          = image_tag "koala.jpg", class: 'works'
-          %i.fas.fa-wrench
-            メンテナンス中
-      .body__container4__box__2
-        = link_to '' do
-          = image_tag "koala.jpg", class: 'works'
-      .body__container4__box__3
-        = link_to '' do
-          = image_tag "koala.jpg", class: 'works'
-      .body__container4__box__3
-        = link_to '' do
-          = image_tag "koala.jpg", class: 'works'
-      .body__container4__box__3
-        = link_to '' do
-          = image_tag "koala.jpg", class: 'works'
-      .body__container4__box__3
-        = link_to '' do
-          = image_tag "koala.jpg", class: 'works'
-      .body__container4__box__3
-        = link_to '' do
-          = image_tag "koala.jpg", class: 'works'
-      .body__container4__box__3
-        = link_to '' do
-          = image_tag "koala.jpg", class: 'works'
-      .body__container4__box__3
-        = link_to '' do
-          = image_tag "koala.jpg", class: 'works'
+        .body__container4__box__1__hide
+        - @hopes.each do |hope|
+          .body__container4__box__1__message
+            = link_to image_tag(hope.image.url class: ""), hope_path(hope)
+            %p
+              = simple_format(hope.message)
+            %b
+              #{convert_to_jpy(hope.desired_price)}
+
   -# .body__container5
   -#   .body__container5__theme
   -#     Contact

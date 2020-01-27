@@ -5,16 +5,17 @@
       .registration__main__container__thema
         %i.fas.fa-hands
       .registration__main__container__form
-        = form_for @hope, url: hopes_path, method: :post, class: "", id: "" do |f|
+        = form_for @hope, url: hope_path, method: :patch, class: "", id: "" do |f|
           .field
-            = f.label :message, "メッセージを入力してください", class: "message"
+            = f.label :message, "メッセージ", class: "message"
             %br/
             = f.text_area :message, autofocus: true
             - if session[:error_message]
-              %p メッセージを入力してください
+              %p メッセージを編集してください
           .field
-            = f.label :image, "写真を投稿してください"
+            = f.label :image, "写真"
             %br/
+            = image_tag(@hope.image.url class: "")
             = f.file_field :image
             - if session[:error_image]
               %p 写真を添付してください
@@ -23,6 +24,6 @@
             %br/
             = f.text_field :desired_price
             - if session[:error_desired_price]
-              %p 希望金額を入力してください
+              %p 希望金額を編集してください
           .actions
-            = f.submit "投稿する"
+            = f.submit "更新する"

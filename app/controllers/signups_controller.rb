@@ -51,6 +51,10 @@ class SignupsController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find_by(id: current_user.id)
+  end
+
 end
 
 def save_to_session
@@ -100,7 +104,10 @@ end
       :password,
       :password_confirmation,
       :provider,
-      :uid
+      :uid,
+      :myimage,
+      :photo,
+      :comment
     )
   end
 
