@@ -5,7 +5,7 @@
       あしなが支援サイト
     .header__main__box
       - if user_signed_in?
-        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "menu"
+        = link_to "mypage", signup_path, class: "menu"
       - else
         = link_to "新規登録", new_signup_path, class: "menu"
         = link_to "ログイン", new_user_session_path, class: "menu"

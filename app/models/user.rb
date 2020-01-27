@@ -7,8 +7,8 @@ class User < ApplicationRecord
   has_many :addresses
   has_many :hopes, dependent: :destroy
 
-  mount_uploader :myimage, ImageUploader
-  mount_uploader :photo, ImageUploader
+  mount_uploader :myimage, MyimageUploader
+  mount_uploader :photo, PhotoUploader
 
   validates :nickname,        presence: true, uniqueness: true
   validates :email,           presence: true, uniqueness: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }

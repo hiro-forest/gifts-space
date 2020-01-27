@@ -52,7 +52,10 @@ class SignupsController < ApplicationController
   end
 
   def show
-    @user = User.find_by(id: current_user.id)
+    if @user = User.find_by(id: current_user.id)
+    else
+      redirect_to root_path
+    end
   end
 
 end

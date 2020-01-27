@@ -7,6 +7,7 @@
         .body__container__center__upper__left
           = @user.nickname
         .body__container__center__upper__right
+          = link_to "ログアウト", destroy_user_session_path, method: :delete
           = @user.email
       .body__container6__center__middle
         .body__container6__center__middle__image
@@ -17,7 +18,7 @@
     .body__container7__center
       .body__container7__center__box
         .body__container7__center__box__left
-          = link_to "編集する", edit_hope_path(@user.id), method: :get
+          = link_to "編集する", root_path
         .body__container7__center__box__right
-          = link_to "削除する", hope_path(@user.id), method: :delete
+          = link_to "削除する", root_path(@user.id)
 = render "gifts/footer"

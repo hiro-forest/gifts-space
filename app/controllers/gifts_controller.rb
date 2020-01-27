@@ -4,6 +4,8 @@ class GiftsController < ApplicationController
   def index
     hopes = Hope.all.order("id DESC")
     @hopes = hopes.first(15)
+    @user = User.find_by(id: current_user.id)
+    params[:format] = @user.id
   end
 
 
@@ -18,10 +20,18 @@ class GiftsController < ApplicationController
     ).merge(:user_id)
   end
 
-  def set_hope
-    binding.pry
-    @hope = Hope.find(id: params[:format])
-    binding.pry
+  def user_params
+    params.require(:user).permit(
+      :nickname,
+      :email,
+      :password,
+      :password_confirmation,
+      :provider,
+      :uid,
+      :myimage,
+      :photo,
+      :comment
+    )
   end
 
 end

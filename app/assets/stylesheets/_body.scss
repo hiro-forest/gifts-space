@@ -4,7 +4,7 @@
 }
 
 @mixin container980 {
-  height: 100%;
+  // height: 100%;
   max-width: 980px;
   margin: 0 auto;
 }
@@ -72,15 +72,15 @@
   }
 }
 .body {
-  width: 100vw;
+  width: 100%;
   height: 100%;
   @media (max-width: 800px){
     height: 100%;
   }
   &__container1 {
     position: relative;
-    width: 100%;
-    height: 100%;
+    // width: 100%;
+    // height: 100%;
     animation: bg-color 10s alternate infinite;
     -webkit-animation: bg-color 10s alternate infinite;
     @-webkit-keyframes bg-color {
