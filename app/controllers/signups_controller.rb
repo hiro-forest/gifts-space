@@ -51,6 +51,26 @@ class SignupsController < ApplicationController
     end
   end
 
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to signup_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    user = User.find(params[:id])
+    if user.id == current_user.id
+      user.destroy
+      redirect_to root_path
+    else
+      render :show
+      flash.now[:alert] = 'もう一度入力してください'
+    end
+  end
+
 end
 
 def save_to_session
@@ -100,7 +120,10 @@ end
       :password,
       :password_confirmation,
       :provider,
-      :uid
+      :uid,
+      :myimage,
+      :photo,
+      :comment
     )
   end
 

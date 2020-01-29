@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_24_090052) do
+ActiveRecord::Schema.define(version: 2020_01_28_085747) do
 
-  create_table "adresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "postal_code", null: false
     t.string "prefecture", null: false
     t.string "city", null: false
@@ -28,13 +28,30 @@ ActiveRecord::Schema.define(version: 2020_01_24_090052) do
     t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.bigint "hope_id", null: false
+    t.index ["hope_id"], name: "index_gifts_on_hope_id"
+    t.index ["user_id"], name: "index_gifts_on_user_id"
   end
 
   create_table "hopes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "image"
-    t.string "message"
+    t.string "image", null: false
+    t.string "message", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.integer "desired_price"
+    t.index ["user_id"], name: "index_hopes_on_user_id"
+  end
+
+  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "picture"
+    t.string "myphoto"
+    t.string "mycomment"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -48,9 +65,16 @@ ActiveRecord::Schema.define(version: 2020_01_24_090052) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "myimage"
+    t.string "photo"
+    t.string "comment"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "adresses", "users"
+  add_foreign_key "addresses", "users"
+  add_foreign_key "gifts", "hopes"
+  add_foreign_key "gifts", "users"
+  add_foreign_key "hopes", "users"
+  add_foreign_key "profiles", "users"
 end

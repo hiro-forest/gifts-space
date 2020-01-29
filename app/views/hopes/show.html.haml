@@ -1,0 +1,23 @@
+= render "gifts/header"
+.show
+  .show__container6
+    .show__container6__center
+      .show__container6__center__upper
+        .show__container6__center__upper__left
+          = @user.nickname
+        .show__container6__center__upper__right
+          希望
+          #{convert_to_jpy(@hope.desired_price)}
+      .show__container6__center__middle
+        .show__container6__center__middle__image
+          = image_tag(@hope.image.url class: "")
+        .show__container6__center__middle__text
+          = simple_format(@hope.message)
+  .show__container7
+    .show__container7__center
+      .show__container7__center__box
+        .show__container7__center__box__left
+          = link_to "編集する", edit_hope_path(@hope.id), method: :get
+        .show__container7__center__box__right
+          = link_to "削除する", hope_path(@hope.id), method: :delete
+= render "gifts/footer"

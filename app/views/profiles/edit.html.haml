@@ -1,0 +1,30 @@
+.show
+  .black
+    .fake
+    = form_for @profile, url: profile_path, method: :patch, class: "", id: "" do |f|
+      .show__container8
+        = image_tag(@profile.myphoto.url class: "")
+        = f.file_field :myphoto
+      .show__container8__center
+        .show__container8__center__upper
+          .show__container8__center__upper__left
+            = image_tag(@profile.picture.url class: "")
+            = f.file_field :picture
+          .show__container8__center__upper__right
+            = @user.nickname
+        .show__container8__center__middle
+          .show__container8__center__middle__left
+          .show__container8__center__middle__right
+            .show__container8__center__middle__right__comment
+              = f.text_area :mycomment, autofocus: true
+              = f.submit "更新する"
+      .show__container9
+        .show__container9__center
+          .show__container9__center__box
+            .show__container9__center__box__left
+
+            .show__container9__center__box__right
+              = link_to "削除する", root_path(@user.id)
+
+              = link_to "ログアウト", destroy_user_session_path, method: :delete
+= render "gifts/footer"

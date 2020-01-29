@@ -1,17 +1,14 @@
 .footer {
   width: 100vw;
-  height: 20vh;
+  height: 150px;
   background-color: #ccc;
-  @media (max-width: 800px){
-    height: 100%;
-  }
   &__container1 {
     max-width: 980px;
-    margin: 10px auto;
+    margin: 0 auto;
     &__sns {
       padding-top: 10px;
       text-align: center;
-      font-size: 50px;
+      font-size: 30px;
       a {
         color: black;
         text-decoration: none;
@@ -30,7 +27,8 @@
   }
   &__container2 {
     max-width: 980px;
-    margin: 30px auto;
+    padding-top: 30px;
+    margin: 0 auto;
     text-align: center;
     @media (max-width:800px){
       margin: 20px auto 0 auto;

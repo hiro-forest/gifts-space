@@ -5,6 +5,20 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname,
                                                           :provider,
-                                                          :uid])
+                                                          :uid,
+                                                          :myimage,
+                                                          :myimage_cache,
+                                                          :photo,
+                                                          :photo_cache,
+                                                          :comment])
+
+    devise_parameter_sanitizer.permit(:account_update, keys: [:nickname,
+                                                          :provider,
+                                                          :uid,
+                                                          :myimage,
+                                                          :myimage_cache,
+                                                          :photo,
+                                                          :photo_cache,
+                                                          :comment])
   end
 end
