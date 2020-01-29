@@ -2,9 +2,6 @@
   width: 100vw;
   height: 150px;
   background-color: #ccc;
-  @media (max-width: 800px){
-    height: 100%;
-  }
   &__container1 {
     max-width: 980px;
     margin: 0 auto;

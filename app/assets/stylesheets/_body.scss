@@ -4,8 +4,11 @@
 }
 
 @mixin container980 {
-  // height: 100%;
   max-width: 980px;
+  margin: 0 auto;
+}
+@mixin container300 {
+  max-width: 300px;
   margin: 0 auto;
 }
 @mixin thema {
@@ -70,6 +73,59 @@
   p {
     font-size: 20px;
   }
+}
+@mixin circle_image {
+  img {
+    width: 400px;
+    height: 400px;
+    box-shadow:3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 200px;
+    object-fit: cover;
+    @media (max-width: 800px){
+      width: 300px;
+      height: 300px;
+      border-radius: 150px;
+    }
+  }
+}
+@mixin circle_small {
+  background-color: #000000;
+  width: 200px;
+  height: 200px;
+  border-radius: 150px;
+  @media (max-width: 750px){
+    width: 150px;
+    height: 150px;
+  }
+  img {
+    width: 200px;
+    height: 200px;
+    box-shadow:3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 150px;
+    object-fit: cover;
+    transition: all 0.6s ease 0s;
+    @media (max-width: 750px){
+      width: 150px;
+      height: 150px;
+    }
+  }
+  img:hover {
+    opacity: 20%;
+  }
+}
+@mixin btn {
+  font-size: 23px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  background-color: #cccccc;
+  text-decoration: none;
+  color: #000000;
+  transition: all 0.3s ease;
+}
+@mixin btn_hover {
+  background-color: #888888;
+  box-shadow:3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+  color: #fff;
 }
 .body {
   width: 100%;

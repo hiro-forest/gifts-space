@@ -1,0 +1,13 @@
+.profile
+  .profile__back
+    .profile__back__center
+      = form_for @profile, url: profiles_path, method: :create, class: "" do |f|
+        .profile__back__center__upper
+        .profile__back__center__middle
+          = f.label :picture, "+", class: ""
+          .profile__back__center__middle__image
+            = image_tag(@profile.picture.url class: "")
+          .profile__back__center__middle__file
+            = f.file_field :picture
+          .actions
+            = f.submit "更新する"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_27_082150) do
+ActiveRecord::Schema.define(version: 2020_01_28_085747) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "postal_code", null: false
@@ -44,6 +44,16 @@ ActiveRecord::Schema.define(version: 2020_01_27_082150) do
     t.index ["user_id"], name: "index_hopes_on_user_id"
   end
 
+  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "picture"
+    t.string "myphoto"
+    t.string "mycomment"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
@@ -66,4 +76,5 @@ ActiveRecord::Schema.define(version: 2020_01_27_082150) do
   add_foreign_key "gifts", "hopes"
   add_foreign_key "gifts", "users"
   add_foreign_key "hopes", "users"
+  add_foreign_key "profiles", "users"
 end

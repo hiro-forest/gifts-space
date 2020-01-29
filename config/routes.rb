@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :signups, only: [:new, :show, :create] do
+  resources :signups, only: [:new, :create, :edit, :update, :destroy] do
     collection do
       get :user
       post :user
@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   end
 
   resources :gifts, only: [:index] do
+
+  end
+
+  resources :profiles, only: [:new, :show, :create, :edit, :update, :destroy] do
 
   end
 

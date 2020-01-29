@@ -4,11 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :addresses
+  has_many :addresses, dependent: :destroy
   has_many :hopes, dependent: :destroy
+  has_one :profile, dependent: :destroy
 
-  mount_uploader :myimage, MyimageUploader
-  mount_uploader :photo, PhotoUploader
+
 
   validates :nickname,        presence: true, uniqueness: true
   validates :email,           presence: true, uniqueness: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }

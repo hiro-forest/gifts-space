@@ -51,10 +51,23 @@ class SignupsController < ApplicationController
     end
   end
 
-  def show
-    if @user = User.find_by(id: current_user.id)
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to signup_path
     else
+      render :edit
+    end
+  end
+
+  def destroy
+    user = User.find(params[:id])
+    if user.id == current_user.id
+      user.destroy
       redirect_to root_path
+    else
+      render :show
+      flash.now[:alert] = 'もう一度入力してください'
     end
   end
 

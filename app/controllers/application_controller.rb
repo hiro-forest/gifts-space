@@ -7,7 +7,18 @@ class ApplicationController < ActionController::Base
                                                           :provider,
                                                           :uid,
                                                           :myimage,
+                                                          :myimage_cache,
                                                           :photo,
+                                                          :photo_cache,
+                                                          :comment])
+
+    devise_parameter_sanitizer.permit(:account_update, keys: [:nickname,
+                                                          :provider,
+                                                          :uid,
+                                                          :myimage,
+                                                          :myimage_cache,
+                                                          :photo,
+                                                          :photo_cache,
                                                           :comment])
   end
 end

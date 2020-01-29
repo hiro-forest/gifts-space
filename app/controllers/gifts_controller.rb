@@ -4,11 +4,9 @@ class GiftsController < ApplicationController
   def index
     hopes = Hope.all.order("id DESC")
     @hopes = hopes.first(15)
-    @user = User.find_by(id: current_user.id)
-    params[:format] = @user.id
+    @user = User.find_by(id: current_user.id) if user_signed_in?
+    @profile = Profile.find_by(user_id: current_user.id) if user_signed_in?
   end
-
-
 
   private
 
