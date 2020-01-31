@@ -4,25 +4,20 @@
     .registration__main__container
       .registration__main__container__thema
         %i.fas.fa-hands
+          %i.fas.fa-heart
       .registration__main__container__form
         = form_for @hope, url: hopes_path, method: :post, class: "", id: "" do |f|
           .field
             = f.label :message, "メッセージを入力してください", class: "message"
             %br/
             = f.text_area :message, autofocus: true
-            - if session[:error_message]
-              %p メッセージを入力してください
           .field
-            = f.label :image, "写真を投稿してください"
-            %br/
-            = f.file_field :image
-            - if session[:error_image]
-              %p 写真を添付してください
+            = f.label :image, "写真を投稿してください" do
+              %i.far.fa-images
+                = f.file_field :image, class: 'hidden'
           .field
             = f.label :desired_price, "希望金額"
             %br/
             = f.text_field :desired_price
-            - if session[:error_desired_price]
-              %p 希望金額を入力してください
           .actions
             = f.submit "投稿する"

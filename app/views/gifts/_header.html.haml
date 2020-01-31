@@ -1,8 +1,10 @@
 .header
   .header__main
     .header__main__name
-      %i.fas.fa-hands
-      あしなが支援サイト
+      .mark
+        %i.fas.fa-hands
+          %i.fas.fa-heart
+        あしなが支援サイト
     .header__main__box
       - if user_signed_in?
         = link_to "mypage", profile_path(@user), method: :get, class: "menu"
@@ -10,7 +12,6 @@
         = link_to "新規登録", new_signup_path, class: "menu"
         = link_to "ログイン", new_user_session_path, class: "menu"
   .header__message
-    - if user_signed_in?
-      = link_to new_hope_path do
-        %p +
-        %i.fas.fa-rainbow
+    = link_to new_hope_path do
+      %p +
+      %i.fas.fa-rainbow

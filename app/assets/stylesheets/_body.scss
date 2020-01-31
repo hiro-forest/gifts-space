@@ -104,6 +104,7 @@
     border-radius: 150px;
     object-fit: cover;
     transition: all 0.6s ease 0s;
+    z-index: 10;
     @media (max-width: 750px){
       width: 150px;
       height: 150px;

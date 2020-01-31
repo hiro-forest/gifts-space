@@ -1,29 +1,30 @@
-.show
-  .show__container8
-    = image_tag(@profile.myphoto.url class: "")
-  .show__container8__center
-    .show__container8__center__upper
-      .show__container8__center__upper__left
-        = image_tag(@profile.picture.url class: "")
-      .show__container8__center__upper__right
-        = @user.nickname
-    .show__container8__center__middle
-      .show__container8__center__middle__blank
-      .show__container8__center__middle__comment
-        .show__container8__center__middle__comment__in
-          = simple_format(@profile.mycomment)
-      .show__container8__center__middle__right
-        - if @profile.picture.blank?
-          .tab
-            = link_to "プロフィールを作成する", new_profile_path
-          .tab
-            = link_to "ログアウト", destroy_user_session_path, method: :delete
-          .tab
-        - else
-          .tab
-            = link_to "プロフィールを編集", edit_profile_path
-          .tab
-            = link_to "プロフィールを削除", profile_path(@profile.id), method: :delete
-          .tab
-            = link_to "ログアウト", destroy_user_session_path, method: :delete
+.proshow
+  .profile__container8
+    .profile__container8__above
+      = image_tag(@profile.myphoto.url class: "")
+    .profile__container8__center
+      .profile__container8__center__upper
+        .profile__container8__center__upper__left
+          = image_tag(@profile.picture.url class: "")
+        .profile__container8__center__upper__right
+          = @user.nickname
+      .profile__container8__center__middle
+        .profile__container8__center__middle__blank
+        .profile__container8__center__middle__comment
+          .profile__container8__center__middle__comment__in
+            = simple_format(@profile.mycomment)
+        .profile__container8__center__middle__right
+          - if @profile.picture.blank?
+            .tab
+              = link_to "プロフィールを作成する", new_profile_path
+            .tab
+              = link_to "ログアウト", destroy_user_session_path, method: :delete
+            .tab
+          - else
+            .tab
+              = link_to "プロフィールを編集", edit_profile_path
+            .tab
+              = link_to "プロフィールを削除", profile_path(@profile.id), method: :delete
+            .tab
+              = link_to "ログアウト", destroy_user_session_path, method: :delete
 = render "gifts/footer"
