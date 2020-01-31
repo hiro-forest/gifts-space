@@ -16,7 +16,6 @@
             = f.label :prefecture, "地域"
             %br/
             = f.collection_select :prefecture, Todouhuken.all, :id, :name, prompt: "---", class: "prefecture"
-            -# = f. text_field :prefecture, autofocus: true
             - if session[:error_prefecture]
               %p 地域が無効です
           .field

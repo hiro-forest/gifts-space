@@ -5,9 +5,15 @@
   &__container1 {
     max-width: 980px;
     margin: 0 auto;
-    &__sns {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    &__left {
+      width: 300px;
+    }
+    &__center {
+      width: 300px;
       padding-top: 10px;
-      text-align: center;
       font-size: 30px;
       a {
         color: black;
@@ -22,6 +28,22 @@
         -moz-filter:drop-shadow(5px 6px 1px rgba(0,0,0,0.2));
         -ms-filter:drop-shadow(5px 6px 1px rgba(0,0,0,0.2));
         transition: all 0.8s ease;
+      }
+    }
+    &__right {
+      width: 300px;
+      padding-top: 20px;
+      font-size: 16px;
+      a {
+        background-color: #fff;
+        padding: 7px 10px;
+        text-decoration: none;
+        color: #000000;
+        border-radius: 15px;
+        transition: all 0.5s ease;
+      }
+      a:hover {
+        @include btn-hover;
       }
     }
   }

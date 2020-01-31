@@ -3,6 +3,7 @@ body {
 }
 .header {
   width: 100vw;
+  height: 50px;
   &__main {
     width: 100%;
     margin: 0 auto;
@@ -13,7 +14,7 @@ body {
       justify-content: space-around;
     }
     @media (max-width: 750px){
-      margin: 15px auto;
+      margin: 0 auto;
       display: block;
       text-align: center;
     }
@@ -24,23 +25,30 @@ body {
       font-weight: bold;
       font-size: 20px;
       @media (max-width: 750px){
-        padding: 10px;
-        font-size: 25px;
+        padding-left: 5px;
       }
-      i {
-        font-size: 35px;
-        text-decoration: none;
-        color: #000000;
-      }
-      i:hover {
-        transform: scale(1.3,1.3);
-        -webkit-transform: scale(1.3,1.3);
-        -ms-transform: scale(1.3,1.3);
-        filter: drop-shadow(5px 6px 1px rgba(0,0,0,0.2));
-        -webkit-filter:drop-shadow(5px 6px 1px rgba(0,0,0,0.2));
-        -moz-filter:drop-shadow(5px 6px 1px rgba(0,0,0,0.2));
-        -ms-filter:drop-shadow(5px 6px 1px rgba(0,0,0,0.2));
-        transition: all 0.8s ease;
+      .mark {
+        margin: 0 auto;
+        width: 330px;
+        position: relative;
+        i.fas.fa-hands::before {
+          font-size: 35px;
+          color: #000000;
+        }
+        i.fas.fa-heart::before {
+          position: absolute;
+          top: - 5px;
+          left: 12px;
+          color: #FF8C00;
+          background: -webkit-linear-gradient(0deg, #40E0D0, #FF8C00, #FF0080);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          @media (max-width: 750px){
+            position: absolute;
+            top: - 5px;
+            left: 40px;
+          }
+        }
       }
     }
     &__box {

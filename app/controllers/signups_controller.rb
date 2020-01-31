@@ -36,7 +36,7 @@ class SignupsController < ApplicationController
         session[:id] = @user.id
       end
         sign_in User.find(session[:id]) unless user_signed_in?
-        redirect_to root_path
+        redirect_to root_path, notice: 'ユーザー登録しました'
     else
       session[:flag] = @address.errors.messages.first
       session[:error_postal_code] = @address.errors.messages[:postal_code].first
@@ -64,10 +64,9 @@ class SignupsController < ApplicationController
     user = User.find(params[:id])
     if user.id == current_user.id
       user.destroy
-      redirect_to root_path
+      redirect_to root_path, notice: 'ユーザー削除しました'
     else
-      render :show
-      flash.now[:alert] = 'もう一度入力してください'
+      redirect_to root_path, alert: '削除出来ませんでした'
     end
   end
 

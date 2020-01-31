@@ -15,7 +15,7 @@ class ProfilesController < ApplicationController
   def create
     @profile = Profile.new(profile_params)
     if @profile.save
-      redirect_to root_path, notice: '登録しました'
+      redirect_to root_path, notice: 'プロフィールを登録しました'
     else
       render :new
     end
@@ -23,11 +23,11 @@ class ProfilesController < ApplicationController
 
   def edit
     @user = User.find_by(id: current_user.id)
-    @profile = Profile.find_by(params[:id])
+    @profile = Profile.find_by(user_id: current_user.id)
   end
 
   def update
-    @profile = Profile.find_by(params[:id])
+    @profile = Profile.find_by(user_id: current_user.id)
     if @profile.user_id == current_user.id
       @profile.update(profile_params)
       redirect_to profile_path
@@ -37,10 +37,10 @@ class ProfilesController < ApplicationController
   end
 
   def destroy
-    profile = Profile.find_by(params[:id])
+    profile = Profile.find_by(id: current_user.id)
     if profile.user_id == current_user.id
       profile.destroy
-      redirect_to root_path
+      redirect_to root_path, notice: 'プロフィールを削除しました'
     else
       render :show
       flash.now[:alert] = 'もう一度入力してください'
