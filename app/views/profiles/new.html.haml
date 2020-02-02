@@ -1,13 +1,39 @@
-.profile
-  .profile__back
-    .profile__back__center
-      = form_for @profile, url: profiles_path, method: :create, class: "" do |f|
-        .profile__back__center__upper
-        .profile__back__center__middle
-          = f.label :picture, "+", class: ""
-          .profile__back__center__middle__image
-            = image_tag(@profile.picture.url class: "")
-          .profile__back__center__middle__file
-            = f.file_field :picture
-          .actions
-            = f.submit "更新する"
+-# .profile
+-#   .profile__back
+-#     .profile__back__center
+-#       = form_for @profile, url: profiles_path, method: :create, class: "" do |f|
+-#         .profile__back__center__upper
+-#         .profile__back__center__middle
+-#           = f.label :picture, "+", class: ""
+-#           .profile__back__center__middle__image
+-#             = image_tag(@profile.picture.url class: "")
+-#           .profile__back__center__middle__file
+-#             = f.file_field :picture
+-#           .actions
+-#             = f.submit "更新する"
+.black
+  .laminate
+    .profile__container8
+    = form_for @profile, url: profiles_path, method: :create, class: "" do |f|
+      .profile__container8__above
+        = image_tag(@profile.myphoto.url class: "")
+        = f.label :myphoto do
+          %i.far.fa-images
+            = f.file_field :myphoto, class: 'hidden'
+      .profile__container8__center
+        .profile__container8__center__upper
+          .profile__container8__center__upper__left
+            = f.label :picture do
+              = image_tag(@profile.picture.url class: "")
+              %i.far.fa-images
+                = f.file_field :picture, class: 'hidden'
+          .profile__container8__center__upper__right
+            = @user.nickname
+        .profile__container8__center__middle
+          .profile__container8__center__middle__blank
+          .profile__container8__center__middle__comment
+            .profile__container8__center__middle__comment__in
+              = f.text_area :mycomment, autofocus: true
+          .profile__container8__center__middle__right
+            .tab
+              = f.submit "作成する", class: 'koushin'

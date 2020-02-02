@@ -5,12 +5,14 @@
       .body__container1__center__upper
       .body__container1__center__title
         .body__container1__center__title__image
-          -# = image_tag "koala.jpg", height: '450px', width: '450px'
           .body__container1__center__title__image__text
-            %p 恵まれない人にチャンスを与えてください
+            = image_tag "oliver.jpg", height: '400px', width: '400px', id: 'title'
+            -# %p 恵まれない人にチャンスを与えてください
+          .body__container1__center__title__image__icon
+            %i.fas.fa-hands
   .body__container2
     .body__container2__theme
-      Profile
+      Topic
     .body__container2__box
       .body__container2__box__1
         %c 本当に支援を必要としている人へ

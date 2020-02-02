@@ -1,5 +1,5 @@
 class HopesController < ApplicationController
-  before_action :set_user
+  before_action :set_user, only: [:new]
 
   def new
     @hope = Hope.new
@@ -9,8 +9,12 @@ class HopesController < ApplicationController
   end
 
   def show
-    @hope = Hope.find_by(id: params[:id])
+    @hope = Hope.find(params[:id])
     @user = User.find(@hope.user_id)
+    if @profile = Profile.find_by(user_id: @user.id)
+    else
+      @profile = Profile.new
+    end
   end
 
   def create

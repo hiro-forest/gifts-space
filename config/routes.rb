@@ -22,6 +22,12 @@ Rails.application.routes.draw do
 
   end
 
+  resources :cards, only: [:new, :show, :destroy] do
+    collection do
+      post 'pay', to: 'cards#pay'
+    end
+  end
+
   root 'gifts#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

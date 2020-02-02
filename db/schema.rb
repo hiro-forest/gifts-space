@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_28_085747) do
+ActiveRecord::Schema.define(version: 2020_01_31_073138) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "postal_code", null: false
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 2020_01_28_085747) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_adresses_on_user_id"
+  end
+
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
   create_table "gifts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -45,7 +54,7 @@ ActiveRecord::Schema.define(version: 2020_01_28_085747) do
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "picture"
+    t.string "picture", null: false
     t.string "myphoto"
     t.string "mycomment"
     t.bigint "user_id"
@@ -73,6 +82,7 @@ ActiveRecord::Schema.define(version: 2020_01_28_085747) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "cards", "users"
   add_foreign_key "gifts", "hopes"
   add_foreign_key "gifts", "users"
   add_foreign_key "hopes", "users"
