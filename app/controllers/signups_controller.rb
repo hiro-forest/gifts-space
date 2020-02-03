@@ -36,7 +36,7 @@ class SignupsController < ApplicationController
         session[:id] = @user.id
       end
         sign_in User.find(session[:id]) unless user_signed_in?
-        redirect_to root_path, notice: 'ユーザー登録しました'
+        redirect_to new_card_path, notice: 'ユーザー登録しました'
     else
       session[:flag] = @address.errors.messages.first
       session[:error_postal_code] = @address.errors.messages[:postal_code].first

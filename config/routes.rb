@@ -14,7 +14,13 @@ Rails.application.routes.draw do
 
   end
 
-  resources :gifts, only: [:index] do
+  resources :gifts, only: [:index, :show] do
+    member do
+      post :confirm
+    end
+    member do
+      post 'buy', to: 'gifts#buy'
+    end
 
   end
 

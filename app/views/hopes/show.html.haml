@@ -27,7 +27,7 @@
             = link_to "削除する", hope_path(@hope.id), method: :delete
         - else
           .hope__container7__center__box__select
-            = link_to "支援する", root_path
+            = link_to "支援する", gift_path(@hope.id)
       - else
         .hope__container7__center__box__select
           = link_to "ログインして支援する", new_user_session_path

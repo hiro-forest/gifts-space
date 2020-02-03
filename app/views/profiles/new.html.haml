@@ -1,16 +1,3 @@
--# .profile
--#   .profile__back
--#     .profile__back__center
--#       = form_for @profile, url: profiles_path, method: :create, class: "" do |f|
--#         .profile__back__center__upper
--#         .profile__back__center__middle
--#           = f.label :picture, "+", class: ""
--#           .profile__back__center__middle__image
--#             = image_tag(@profile.picture.url class: "")
--#           .profile__back__center__middle__file
--#             = f.file_field :picture
--#           .actions
--#             = f.submit "更新する"
 .black
   .laminate
     .profile__container8
@@ -35,5 +22,11 @@
             .profile__container8__center__middle__comment__in
               = f.text_area :mycomment, autofocus: true
           .profile__container8__center__middle__right
-            .tab
-              = f.submit "作成する", class: 'koushin'
+            %li
+              = f.submit "プロフィールを作成する", id: 'sakusei'
+            %li
+              = link_to "ログアウト", destroy_user_session_path, method: :delete, id: ""
+            %li
+              = link_to "カード情報の確認", new_card_path
+            %li
+              = link_to "ユーザー登録情報", edit_user_registration_path(@user.id), method: :get

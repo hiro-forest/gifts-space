@@ -1,0 +1,26 @@
+.registration
+  .registration__upper
+  .registration__main
+    .registration__main__container
+      .registration__main__container__thema
+        .mark
+          %i.fas.fa-hands
+            %i.fas.fa-heart
+      .registration__main__container__form
+        = form_for @gift, url: buy_gift_path, method: :post, class: "", id: "" do |f|
+          .field
+            %b
+              #{convert_to_jpy(@gift.price)}
+          .field
+            %br 支払い方法
+            %label 登録クレジットカード情報
+            %br
+            = "**** **** **** " + @default_card_information.last4
+            %br
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = f.hidden_field :price
+            = f.hidden_field :user_id
+            = f.hidden_field :hope_id
+          .actions
+            = f.submit "決定"

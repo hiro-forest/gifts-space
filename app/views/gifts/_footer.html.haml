@@ -6,8 +6,6 @@
         = link_to root_path do
           %i.fas.fa-undo-alt
       .footer__upper__container1__right
-        - if user_signed_in?
-          = link_to "ユーザー登録情報", edit_user_registration_path(@user.id), method: :get
   .footer__lower
     .footer__lower__container2
       © 2020 Ashinaga Shien

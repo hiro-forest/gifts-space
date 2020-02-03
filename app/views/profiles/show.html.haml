@@ -15,10 +15,14 @@
             = simple_format(@profile.mycomment)
         .profile__container8__center__middle__right
           - if @profile.user_id == current_user.id
-            .tab
+            %li
               = link_to "プロフィールを編集", edit_profile_path
-            .tab
+            %li
               = link_to "プロフィールを削除", profile_path(@profile.id), method: :delete
-            .tab
+            %li
+              = link_to "カード情報の確認", card_path
+            %li
               = link_to "ログアウト", destroy_user_session_path, method: :delete
+            %li
+              = link_to "ユーザー登録情報", edit_user_registration_path(@user.id), method: :get
 = render "gifts/footer"

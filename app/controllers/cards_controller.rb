@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
-  # before_action :set_card, only: [:new, :show, :destroy]
+  before_action :set_card, only: [:new, :show, :destroy]
   before_action :authenticate_user!
 
   def new
@@ -20,9 +20,9 @@ class CardsController < ApplicationController
       )
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to root_path
+        redirect_to root_path, notice: 'クレジットカードを登録しました'
       else
-        redirect_to new_card_path
+        redirect_to new_card_path, alert: 'もう一度入力をお願いします'
       end
     end
   end
@@ -34,7 +34,7 @@ class CardsController < ApplicationController
       customer.delete
       @card.delete
     end
-      redirect_to root_path
+      redirect_to root_path, notice: 'クレジットカード情報を削除しました'
   end
 
   def show

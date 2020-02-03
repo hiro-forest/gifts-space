@@ -8,9 +8,8 @@
     .header__main__box
       - if user_signed_in?
         - if @profile == nil
-          = image_tag "kiki.png"
-          = link_to "プロフィールを作成する", new_profile_path, method: :get, class: "tab"
-          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "tab"
+          = link_to new_profile_path, method: :get, id: "" do
+            = image_tag "kiki.png"
         - else
           = link_to profile_path(@user), method: :get, class: "" do
             = image_tag(@profile.picture.url)
