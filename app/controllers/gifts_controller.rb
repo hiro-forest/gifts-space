@@ -5,6 +5,8 @@ class GiftsController < ApplicationController
   def index
     hopes = Hope.all.order("id DESC")
     @hopes = hopes.first(15)
+    gifts = Gift.all.order("id DESC")
+    @gifts = gifts.first(8)
     @user = User.find_by(id: current_user.id) if user_signed_in?
     @profile = Profile.find_by(user_id: current_user.id) if user_signed_in?
   end

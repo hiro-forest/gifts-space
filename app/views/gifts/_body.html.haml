@@ -6,8 +6,8 @@
       .body__container1__center__title
         .body__container1__center__title__image
           .body__container1__center__title__image__text
-            = image_tag "oliver.jpg", height: '400px', width: '400px', id: 'title'
-            -# %p 恵まれない人にチャンスを与えてください
+            - @gifts.each do |gift|
+              %p #{convert_to_jpy(gift.price)}の支援がありました
           .body__container1__center__title__image__icon
             %i.fas.fa-hands
   .body__container2
@@ -18,25 +18,6 @@
         %c 本当に支援を必要としている人へ
         %br あなたから
         %a 今出来ることを
-  -# .body__container3
-  -#   .body__container3__theme
-  -#     Skill
-  -#   .body__container3__box
-  -#     .body__container3__box__1
-  -#       %h2 Design
-  -#       -# = image_tag "photoshop-cc.svg", size: '50x50'
-  -#       -# = image_tag "lightroom-cc.svg", size: '50x50'
-  -#       -# = image_tag "adobe-illustrator-cc.svg", size: '50x50'
-  -#     .body__container3__box__2
-  -#       %h2 Frontend
-  -#       %i.fab.fa-html5
-  -#       %i.fab.fa-css3-alt
-  -#       %i.fab.fa-js
-  -#     .body__container3__box__3
-  -#       %h2 Backend
-  -#       %i.fas.fa-gem
-  -#       %h2 Server
-  -#       %i.fab.fa-aws
   .body__container4
     .body__container4__theme
       Hopes
@@ -50,14 +31,3 @@
               = simple_format(hope.message)
             %b
               #{convert_to_jpy(hope.desired_price)}
-
-  -# .body__container5
-  -#   .body__container5__theme
-  -#     Contact
-  -#   .body__container5__box
-  -#     .body__container5__box__1
-  -#       %c ご依頼は下記お問い合わせまで
-  -#       %br よろしくお願いいたします！
-  -#     .body__container5__box__2
-  -#       -# = link_to top_contact_path do
-  -#       %i.fas.fa-envelope
