@@ -1,0 +1,21 @@
+.registration
+  .registration__upper
+  .registration__main
+    .registration__main__container
+      .registration__main__container__thema
+        .mark
+          %i.fas.fa-hands
+            %i.fas.fa-heart
+      .registration__main__container__form
+        = form_for @gift, url: confirm_gift_path, method: :post, class: "", id: "" do |f|
+          .field
+            = simple_format(@hope.message, id: 'message')
+            %br/
+          .field
+            = image_tag(@hope.image.url class: "")
+          .field
+            = f.label :price, "支援金額", class: "price"
+            %br/
+            = f.text_field :price, autofocus: true
+          .actions
+            = f.submit "確認"

@@ -7,7 +7,12 @@
         あしなが支援サイト
     .header__main__box
       - if user_signed_in?
-        = link_to "mypage", profile_path(@user), method: :get, class: "menu"
+        - if @profile == nil
+          = link_to new_profile_path, method: :get, id: "" do
+            = image_tag "kiki.png"
+        - else
+          = link_to profile_path(@user), method: :get, class: "" do
+            = image_tag(@profile.picture.url)
       - else
         = link_to "新規登録", new_signup_path, class: "menu"
         = link_to "ログイン", new_user_session_path, class: "menu"

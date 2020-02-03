@@ -3,7 +3,9 @@
   .registration__main
     .registration__main__container
       .registration__main__container__thema
-        %i.fas.fa-hands
+        .mark
+          %i.fas.fa-hands
+            %i.fas.fa-heart
       .registration__main__container__form
         = form_for(resource, as: resource_name, url: session_path(resource_name), class:"devise-login-container__main__container__form") do |f|
           .field
@@ -19,4 +21,4 @@
           .field
             .field__box
               = link_to "新規会員登録", new_signup_path, method: :get, id: "shinki"
-=render "gifts/footer"
+  .registration__upper

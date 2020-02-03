@@ -3,7 +3,9 @@
   .registration__main
     .registration__main__container
       .registration__main__container__thema
-        %i.fas.fa-hands
+        .mark
+          %i.fas.fa-hands
+            %i.fas.fa-heart
       .registration__main__container__form
         = form_for @hope, url: hope_path, method: :patch, class: "", id: "" do |f|
           .field

@@ -1,6 +1,6 @@
 .registration {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: #fff;
   @media (max-width:650px){
     height: 100%;
@@ -63,6 +63,12 @@
           .hidden {
             display: none;
           }
+          c {
+            font-size: 16px;
+          }
+          em {
+            font-size: 16px;
+          }
           i.far.fa-images {
             border: ridge 1px #fff;
             transition: all 0.3s ease;
@@ -94,6 +100,9 @@
           p {
             color: red;
           }
+          #message {
+            color: black;
+          }
           img {
             height: 200px;
             width: 200px;
@@ -109,6 +118,8 @@
             }
           }
           &__box {
+            letter-spacing: 0.2rem;
+            font-family: "Noto Sans JP", "\6E38\30B4\30B7\30C3\30AF", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "\30E1\30A4\30EA\30AA", Meiryo, "\FF2D\FF33 \30B4\30B7\30C3\30AF", sans-serif;
             margin: 0 auto;
             @media (max-width: 750px){
               width: 100%;
@@ -133,9 +144,9 @@
               }
             }
             a#shinki {
-              padding: 7px 138px;
+              padding: 7px 143px;
               @media (max-width: 750px){
-                padding: 7px 81px;
+                padding: 9px 85px;
               }
             }
             a {
@@ -153,6 +164,9 @@
             }
             a:hover {
               @include btn_hover;
+            }
+            input:hover {
+              
             }
           }
         }

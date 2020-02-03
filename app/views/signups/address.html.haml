@@ -3,7 +3,9 @@
   .registration__main
     .registration__main__container
       .registration__main__container__thema
-        %i.fas.fa-hands
+        .mark
+          %i.fas.fa-hands
+            %i.fas.fa-heart
       .registration__main__container__form
         = form_for @address, url: signups_path, method: :post, class: "", id: "" do |f|
           .field
@@ -36,3 +38,4 @@
             = f.text_field :building
           .actions
             = f.submit "登録する"
+  .registration__upper
