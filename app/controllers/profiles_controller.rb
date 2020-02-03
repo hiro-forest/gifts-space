@@ -11,7 +11,7 @@ class ProfilesController < ApplicationController
     else
       @profile = Profile.new
     end
-    @user = User.find(params[:id])
+      @user = User.find(params[:id])
   end
 
   def create
