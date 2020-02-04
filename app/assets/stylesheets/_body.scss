@@ -30,15 +30,6 @@
         100% { background-color: #800080; }
       }
     }
-    // .circle {
-    //   background-color: #000000;
-    //   width: 30px;
-    //   height: 30px;
-    //   border-radius: 15px;
-    //   position: absolute;
-    //   bottom: 0;
-    //   left: 20px;
-    // }
     &__center {
       @include container980;
       &__upper {
