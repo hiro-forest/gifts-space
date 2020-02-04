@@ -109,7 +109,16 @@
       height: 100%;
     }
     &__theme {
-      @include thema;
+      letter-spacing: 0.2rem;
+      margin-top: 50px;
+      padding: 0 50px 50px 50px;
+      text-align: center;
+      font-family: "Noto Sans JP", "\6E38\30B4\30B7\30C3\30AF", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "\30E1\30A4\30EA\30AA", Meiryo, "\FF2D\FF33 \30B4\30B7\30C3\30AF", sans-serif;
+      font-weight: bold;
+      font-size: 45px;
+      @media (max-width: 800px){
+        font-size: 35px;
+      }
     }
     &__box {
       height: calc(100% - 150px);
@@ -131,59 +140,6 @@
       }
     }
   }
-  &__container3 {
-    max-width: 980px;
-    margin: 0 auto;
-    @media (max-width: 800px){
-      height: 100%;
-    }
-    &__theme {
-      @include thema;
-    }
-    &__box {
-      text-align: center;
-      height: calc(100% - 95px);
-      display: flex;
-      flex-wrap: wrap;
-      @media (max-width: 800px){
-        display: block;
-      }
-      &__1 {
-        @include box_in;
-        @include skill;
-        img {
-          display: block;
-          margin: 3px auto;
-        }
-      }
-      &__2 {
-        @include box_in;
-        @include skill;
-        i {
-          display: block;
-        }
-        i.fab.fa-html5 {
-          color: rgb(231, 92, 28);
-        }
-        i.fab.fa-css3-alt {
-          color: rgb(21, 17, 226);
-        }
-        i.fab.fa-js {
-          color: rgb(252, 175, 32);
-        }
-      }
-      &__3 {
-        @include box_in;
-        @include skill;
-        i.fas.fa-gem {
-          color: rgb(228, 2, 2);
-        }
-        i.fab.fa-aws {
-          color: rgb(241, 157, 1);
-        }
-      }
-    }
-  }
   &__container4 {
     max-width: 980px;
     margin: 0 auto;
@@ -191,7 +147,16 @@
       height: 100%;
     }
     &__theme {
-      @include thema;
+      letter-spacing: 0.2rem;
+      margin-top: 50px;
+      padding: 0 50px 50px 50px;
+      text-align: center;
+      font-family: "Noto Sans JP", "\6E38\30B4\30B7\30C3\30AF", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "\30E1\30A4\30EA\30AA", Meiryo, "\FF2D\FF33 \30B4\30B7\30C3\30AF", sans-serif;
+      font-weight: bold;
+      font-size: 45px;
+      @media (max-width: 800px){
+        font-size: 35px;
+      }
     }
     &__box {
       height: calc(100% - 95px);
@@ -200,8 +165,43 @@
         display: flex;
         flex-wrap: wrap;
         &__message {
-          @include box_in;
           transition: all 0.7s ease;
+          margin: 15px;
+          width: 30%;
+          height: 250px;
+          box-shadow:3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+          border-radius: 20px;
+          background-color: #000000;
+          position: relative;
+          @media (max-width: 900px){
+            width: 300px;
+            margin: 15px auto;
+          }
+          p {
+            color: #fff;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1;
+          }
+          b {
+            color: #fff;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+          }
+          img {
+            position: absolute;
+            z-index: 3;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: all 0.6s ease 0s;
+          }
+          img:hover {
+            opacity: 20%;
+          }
         }
         &__message:hover {
           transform: scale(1.1, 1.1);
@@ -222,7 +222,16 @@
       height: 100%;
     }
     &__theme {
-      @include thema;
+      letter-spacing: 0.2rem;
+      margin-top: 50px;
+      padding: 0 50px 50px 50px;
+      text-align: center;
+      font-family: "Noto Sans JP", "\6E38\30B4\30B7\30C3\30AF", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "\30E1\30A4\30EA\30AA", Meiryo, "\FF2D\FF33 \30B4\30B7\30C3\30AF", sans-serif;
+      font-weight: bold;
+      font-size: 45px;
+      @media (max-width: 800px){
+        font-size: 35px;
+      }
     }
     &__box {
       height: calc(100% - 150px);
