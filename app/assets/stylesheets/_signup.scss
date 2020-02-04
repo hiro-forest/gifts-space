@@ -80,7 +80,7 @@
             cursor: pointer;
           }
           i.far.fa-images:hover {
-            @include btn-hover;
+            @include btn_hover;
           }
           input {
             width: 75%;
