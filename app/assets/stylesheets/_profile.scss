@@ -82,7 +82,7 @@
         }
       }
       &__center {
-        @include container_mid;
+        @include center;
         &__upper {
           padding: 5px;
           position: relative;

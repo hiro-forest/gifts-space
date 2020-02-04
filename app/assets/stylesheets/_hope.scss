@@ -7,7 +7,7 @@
   }
   &__container6 {
     &__center {
-      @include container_mid;
+      @include center;
       &__upper {
         padding: 50px 20px 0 20px;
         font-size: 25px;
@@ -96,7 +96,7 @@
   }
   &__container7 {
     &__center {
-      @include container_mid;
+      @include center;
       padding-bottom: 100px;
       &__box {
         @include body;
