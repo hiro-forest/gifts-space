@@ -3,11 +3,11 @@
   height: 100%;
 }
 
-@mixin container980 {
+@mixin container_mid {
   max-width: 980px;
   margin: 0 auto;
 }
-@mixin container300 {
+@mixin container_small {
   max-width: 300px;
   margin: 0 auto;
 }
