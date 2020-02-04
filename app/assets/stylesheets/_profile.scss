@@ -82,7 +82,8 @@
         }
       }
       &__center {
-        @include zen;
+        max-width: 980px;
+        margin: 0 auto;
         &__upper {
           padding: 5px;
           position: relative;

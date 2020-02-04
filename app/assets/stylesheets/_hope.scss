@@ -7,7 +7,8 @@
   }
   &__container6 {
     &__center {
-      @include zen;
+      max-width: 980px;
+      margin: 0 auto;
       &__upper {
         padding: 50px 20px 0 20px;
         font-size: 25px;
@@ -96,7 +97,8 @@
   }
   &__container7 {
     &__center {
-      @include zen;
+      max-width: 980px;
+      margin: 0 auto;
       padding-bottom: 100px;
       &__box {
         @include body;
