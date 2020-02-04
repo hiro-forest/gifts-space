@@ -31,7 +31,8 @@
       }
     }
     &__center {
-      @include zen;
+      max-width: 980px;
+      margin: 0 auto;
       &__upper {
         width: 100%;
         height: 40px;
@@ -102,7 +103,8 @@
     }
   }
   &__container2 {
-    @include zen;
+    max-width: 980px;
+    margin: 0 auto;
     @media (max-width: 800px){
       height: 100%;
     }
@@ -130,7 +132,8 @@
     }
   }
   &__container3 {
-    @include zen;
+    max-width: 980px;
+    margin: 0 auto;
     @media (max-width: 800px){
       height: 100%;
     }
@@ -182,7 +185,8 @@
     }
   }
   &__container4 {
-    @include zen;
+    max-width: 980px;
+    margin: 0 auto;
     @media (max-width: 800px){
       height: 100%;
     }
@@ -212,7 +216,8 @@
     }
   }
   &__container5 {
-    @include zen;
+    max-width: 980px;
+    margin: 0 auto;
     @media (max-width: 800px){
       height: 100%;
     }
