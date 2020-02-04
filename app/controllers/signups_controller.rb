@@ -74,10 +74,6 @@ end
 
 def save_to_session
   unless session[:flag]
-    # if user_params[:password] != user_params[:password_confirmation]
-    #   session[:error_password_confirmation] = user_params[:password_confirmation]
-    #   redirect_to user_signups_path
-    # end
     if session[:uid] == nil
       session[:password] = user_params[:password]
     end
@@ -87,8 +83,8 @@ def save_to_session
       nickname: session[:nickname],
       email: session[:email],
       password: session[:password]
-      # provider: session[:provider],
-      # uid: session[:uid]
+      provider: session[:provider],
+      uid: session[:uid]
     )
     if @user.invalid?
       if session[:uid] == nil
