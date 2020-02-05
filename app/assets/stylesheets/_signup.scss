@@ -91,6 +91,12 @@
               width: 280px;
             }
           }
+          input#user_password {
+            letter-spacing: 0.1rem;
+            font-size: 16px;
+            height: 37px;
+            font-family: "Noto Sans JP", "\6E38\30B4\30B7\30C3\30AF", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "\30E1\30A4\30EA\30AA", Meiryo, "\FF2D\FF33 \30B4\30B7\30C3\30AF", sans-serif;
+          }
           select {
             height: 33px;
             width: 75%;
@@ -101,6 +107,7 @@
           }
           p {
             color: red;
+            font-size: 18px;
           }
           #message {
             color: black;
