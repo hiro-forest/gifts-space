@@ -82,7 +82,7 @@ def save_to_session
     @user = User.new(
       nickname: session[:nickname],
       email: session[:email],
-      password: session[:password]
+      password: session[:password],
       provider: session[:provider],
       uid: session[:uid]
     )
@@ -116,9 +116,6 @@ end
       :password_confirmation,
       :provider,
       :uid,
-      :myimage,
-      :photo,
-      :comment
     )
   end
 
