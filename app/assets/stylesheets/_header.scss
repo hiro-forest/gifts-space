@@ -3,14 +3,14 @@ body {
 }
 .header {
   width: 100vw;
-  height: 50px;
+  height: 100%;
   @media (max-width: 750px){
     height: 100%;
   }
   &__main {
     width: 100%;
     margin: 0 auto;
-    padding-top:10px;
+    padding-top:20px;
     display: flex;
     justify-content: space-between;
     @media (max-width: 980px){
